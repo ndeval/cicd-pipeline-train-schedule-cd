@@ -7,8 +7,8 @@ pipeline {
                 sh './gradlew build --no-daemon'
                 archiveArtifacts artifacts: 'dist/trainSchedule.zip'
             }
-     }
-     stage('DeployToStaging') {
+        }
+        stage('DeployToStaging') {
             when {
                 branch 'master'
             }
@@ -37,5 +37,4 @@ pipeline {
                     )
                 }
             }
-        }   
-    }
+        }
